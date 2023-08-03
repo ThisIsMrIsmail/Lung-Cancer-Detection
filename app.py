@@ -1,6 +1,6 @@
 import os
-import tensorflow as tf
-import flask as flask
+import keras
+import flask
 
 app = flask.Flask(__name__)
 
@@ -16,13 +16,13 @@ def predict():
     image_path = "./images/" + image.filename
     image.save(image_path)
 
-    cnn = tf.keras.models.load_model("model.h5")
+    cnn = keras.models.load_model("model.h5")
 
     import numpy as np
 
     classes = ["Adenocarcinoma", "Large cell carcinoma", "Normal", "Squamous cell carcinoma"]
-    img = tf.keras.utils.load_img(image_path, target_size=(64, 64))
-    norm_img = tf.keras.utils.img_to_array(img) / 255
+    img = keras.utils.load_img(image_path, target_size=(64, 64))
+    norm_img = keras.utils.img_to_array(img) / 255
     input_arr_img = np.array([norm_img])
     pred = np.argmax(cnn.predict(input_arr_img))
     print(classes[pred])
