@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/app" }
+  ],
+  "env": {
+    "PYTHONPATH": "api/"
+  },
+  "includeFiles": ["api/models/v2-cnn-100epochs.h5"]
+}
