@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
-from tensorflow.keras.preprocessing.image import load_img, img_to_array
-from tensorflow.keras.models import load_model
+from keras.preprocessing.image import load_img, img_to_array
+from keras.models import load_model
 import numpy as np
 import os
 
@@ -52,5 +52,5 @@ def predict():
 
     return render_template('index.html', pred=prediction)
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
