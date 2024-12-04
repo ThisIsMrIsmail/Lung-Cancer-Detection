@@ -28,7 +28,7 @@ def predict():
         test_image = np.expand_dims(test_image, axis=0)
 
         # Load the model
-        cnn = keras.models.load_model('models/v2-cnn-100epochs.h5')
+        cnn = keras.models.load_model('api/models/v2-cnn-100epochs.h5')
 
         # Perform the prediction
         result = cnn.predict(test_image)
