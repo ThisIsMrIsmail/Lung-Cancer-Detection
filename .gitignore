@@ -19,7 +19,6 @@ __pycache__/
 .pytest_cache/
 .pyre/
 .pytype/
-*.h5
 *.sql
 *.sqlite3-journal
 *.sqlite-journal
